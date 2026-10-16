@@ -1,0 +1,117 @@
+{
+  "ranking_source": "outputs/tables/model_comparison_by_seed.csv sorted by outer OOF ROC-AUC",
+  "input_sha256": "3760939d203366b23bff75c4f84062b01fee3252445a15450c61f3efa3824e1e",
+  "models": [
+    {
+      "rank": 1,
+      "file": "top10/rank01_KNearestNeighbors_seed0.joblib",
+      "model": "KNearestNeighbors",
+      "seed": 0,
+      "nested_outer_roc_auc": 0.7648650970957208,
+      "nested_outer_mcc": 0.3705002963516069,
+      "mean_inner_roc_auc": 0.7703992634090675,
+      "pooled_inner_oof_roc_auc": 0.7648650970957208,
+      "threshold": 0.4522232618043105
+    },
+    {
+      "rank": 2,
+      "file": "top10/rank02_XGBoost_seed42.joblib",
+      "model": "XGBoost",
+      "seed": 42,
+      "nested_outer_roc_auc": 0.7621011628573064,
+      "nested_outer_mcc": 0.33144647967923974,
+      "mean_inner_roc_auc": 0.7843914306463328,
+      "pooled_inner_oof_roc_auc": 0.7812052471787821,
+      "threshold": 0.6498743891716003
+    },
+    {
+      "rank": 3,
+      "file": "top10/rank03_RandomForest_seed0.joblib",
+      "model": "RandomForest",
+      "seed": 0,
+      "nested_outer_roc_auc": 0.7557283611158847,
+      "nested_outer_mcc": 0.4229643809770733,
+      "mean_inner_roc_auc": 0.7623336445689386,
+      "pooled_inner_oof_roc_auc": 0.7613421550094519,
+      "threshold": 0.47870290528192794
+    },
+    {
+      "rank": 4,
+      "file": "top10/rank04_XGBoost_seed2024.joblib",
+      "model": "XGBoost",
+      "seed": 2024,
+      "nested_outer_roc_auc": 0.7451881766626567,
+      "nested_outer_mcc": 0.35500393421414644,
+      "mean_inner_roc_auc": 0.7447537088909637,
+      "pooled_inner_oof_roc_auc": 0.7469353268030018,
+      "threshold": 0.24296872317790985
+    },
+    {
+      "rank": 5,
+      "file": "top10/rank05_RandomForest_seed2024.joblib",
+      "model": "RandomForest",
+      "seed": 2024,
+      "nested_outer_roc_auc": 0.7438706536060032,
+      "nested_outer_mcc": 0.36377840829644975,
+      "mean_inner_roc_auc": 0.7594509803921569,
+      "pooled_inner_oof_roc_auc": 0.7561579881995762,
+      "threshold": 0.4998942028823785
+    },
+    {
+      "rank": 6,
+      "file": "top10/rank06_RandomForest_seed12345.joblib",
+      "model": "RandomForest",
+      "seed": 12345,
+      "nested_outer_roc_auc": 0.7408775849229535,
+      "nested_outer_mcc": 0.37387446918416156,
+      "mean_inner_roc_auc": 0.7454985994397758,
+      "pooled_inner_oof_roc_auc": 0.7408775849229535,
+      "threshold": 0.4398147341828892
+    },
+    {
+      "rank": 7,
+      "file": "top10/rank07_XGBoost_seed2025.joblib",
+      "model": "XGBoost",
+      "seed": 2025,
+      "nested_outer_roc_auc": 0.7396459872830383,
+      "nested_outer_mcc": 0.3794863637930411,
+      "mean_inner_roc_auc": 0.7475539993775288,
+      "pooled_inner_oof_roc_auc": 0.7441427507590079,
+      "threshold": 0.4256444573402405
+    },
+    {
+      "rank": 8,
+      "file": "top10/rank08_LightGBM_seed0.joblib",
+      "model": "LightGBM",
+      "seed": 0,
+      "nested_outer_roc_auc": 0.7383141433235951,
+      "nested_outer_mcc": 0.30841011147538416,
+      "mean_inner_roc_auc": 0.7518991596638657,
+      "pooled_inner_oof_roc_auc": 0.7511743140287566,
+      "threshold": 0.6221156139128436
+    },
+    {
+      "rank": 9,
+      "file": "top10/rank09_RandomForest_seed42.joblib",
+      "model": "RandomForest",
+      "seed": 42,
+      "nested_outer_roc_auc": 0.73509194019591,
+      "nested_outer_mcc": 0.39023274268017977,
+      "mean_inner_roc_auc": 0.7499355742296918,
+      "pooled_inner_oof_roc_auc": 0.7466918714555767,
+      "threshold": 0.5061120936268728
+    },
+    {
+      "rank": 10,
+      "file": "top10/rank10_LightGBM_seed42.joblib",
+      "model": "LightGBM",
+      "seed": 42,
+      "nested_outer_roc_auc": 0.7330297301941913,
+      "nested_outer_mcc": 0.3457924890085169,
+      "mean_inner_roc_auc": 0.7752536570183629,
+      "pooled_inner_oof_roc_auc": 0.7697198831414332,
+      "threshold": 0.6901002356480895
+    }
+  ],
+  "loading": "joblib.load requires this environment; XGBoost artifacts additionally require run_final_pipeline importable for the local tags adapter class"
+}

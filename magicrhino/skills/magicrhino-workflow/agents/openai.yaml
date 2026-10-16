@@ -1,0 +1,4 @@
+interface:
+  display_name: "MagicRhino Workflow"
+  short_description: "Operate MagicRhino ML workflows directly"
+  default_prompt: "Use $magicrhino-workflow to inspect data, train a model, or explain predictions."

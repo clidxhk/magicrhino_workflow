@@ -1,0 +1,220 @@
+{
+  "configuration": {
+    "training_file": "inputs/Overall_data.csv",
+    "index_column": "Index",
+    "target_column": "Y",
+    "models": [
+      "LogisticRegression",
+      "GaussianNB",
+      "KNearestNeighbors",
+      "RandomForest",
+      "LightGBM",
+      "XGBoost"
+    ],
+    "comparison_seeds": [
+      0,
+      42,
+      2024,
+      2025,
+      12345
+    ],
+    "outer_folds": 5,
+    "inner_folds": 5,
+    "search_trials": 6,
+    "workers": 5,
+    "n_top_models": 10,
+    "deployment_model": "RandomForest",
+    "deployment_seed": 0
+  },
+  "input_file": "inputs/Overall_data.csv",
+  "package_versions": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "xgboost": "2.1.2",
+    "joblib": "1.5.3",
+    "threadpoolctl": "3.6.0"
+  },
+  "python_version": "3.11.15",
+  "n_training_samples": 391,
+  "n_features": 2428,
+  "class_counts": {
+    "0": 253,
+    "1": 138
+  },
+  "evaluation": {
+    "design": "Per-classifier nested internal validation (5 outer x 5 inner folds, 6-candidate randomized search per outer training set, seeds 0/42/2024/2025/12345)",
+    "threshold_selection": "MCC-optimal on selected-parameter inner OOF within each outer training set; no pooled outer threshold",
+    "uncertainty": "Seed SD describes split sensitivity, not independent replication or a confidence interval",
+    "prior_development": "All samples were previously used in exploratory model development; these are not newly collected external tests"
+  },
+  "model_family_summary": {
+    "RandomForest": {
+      "mean_outer_roc_auc": 0.7391304347826086,
+      "sd_outer_roc_auc": 0.013039396290633528,
+      "mean_outer_mcc": 0.3892213836267824,
+      "sd_outer_mcc": 0.022687624142564925
+    },
+    "XGBoost": {
+      "mean_outer_roc_auc": 0.7367445723778426,
+      "sd_outer_roc_auc": 0.01939420282468334,
+      "mean_outer_mcc": 0.326905535684883,
+      "sd_outer_mcc": 0.0426145236875401
+    },
+    "KNearestNeighbors": {
+      "mean_outer_roc_auc": 0.729226098413244,
+      "sd_outer_roc_auc": 0.020196612875073183,
+      "mean_outer_mcc": 0.33636968247751453,
+      "sd_outer_mcc": 0.03716310300113629
+    },
+    "LightGBM": {
+      "mean_outer_roc_auc": 0.7191613679326344,
+      "sd_outer_roc_auc": 0.015603218694034526,
+      "mean_outer_mcc": 0.3042788280671853,
+      "sd_outer_mcc": 0.026427591560092188
+    },
+    "GaussianNB": {
+      "mean_outer_roc_auc": 0.7094575242023258,
+      "sd_outer_roc_auc": 0.015526837455940534,
+      "mean_outer_mcc": 0.32277733538369696,
+      "sd_outer_mcc": 0.017410252768442235
+    },
+    "LogisticRegression": {
+      "mean_outer_roc_auc": 0.6985793664432606,
+      "sd_outer_roc_auc": 0.014059500637813162,
+      "mean_outer_mcc": 0.286669290080081,
+      "sd_outer_mcc": 0.015911684104587917
+    }
+  },
+  "deployment_model": {
+    "family": "RandomForest",
+    "selection_seed": 0,
+    "artifact": "models/random_forest_seed0.joblib",
+    "threshold": 0.47870290528192794,
+    "best_parameters": {
+      "model__class_weight": "balanced_subsample",
+      "model__max_depth": 8,
+      "model__max_features": "sqrt",
+      "model__min_samples_leaf": 2,
+      "select__k": 200
+    },
+    "mean_inner_roc_auc": 0.7623336445689386,
+    "pooled_inner_oof_roc_auc": 0.7613421550094519,
+    "n_selected_features": 200
+  },
+  "expected_performance": "Family-level nested estimate: ROC-AUC 0.739 ± 0.013, MCC 0.389 ± 0.023; per-seed scores are not unbiased",
+  "top10_models": [
+    {
+      "rank": 1,
+      "file": "top10/rank01_KNearestNeighbors_seed0.joblib",
+      "model": "KNearestNeighbors",
+      "seed": 0,
+      "nested_outer_roc_auc": 0.7648650970957208,
+      "nested_outer_mcc": 0.3705002963516069,
+      "mean_inner_roc_auc": 0.7703992634090675,
+      "pooled_inner_oof_roc_auc": 0.7648650970957208,
+      "threshold": 0.4522232618043105
+    },
+    {
+      "rank": 2,
+      "file": "top10/rank02_XGBoost_seed42.joblib",
+      "model": "XGBoost",
+      "seed": 42,
+      "nested_outer_roc_auc": 0.7621011628573064,
+      "nested_outer_mcc": 0.33144647967923974,
+      "mean_inner_roc_auc": 0.7843914306463328,
+      "pooled_inner_oof_roc_auc": 0.7812052471787821,
+      "threshold": 0.6498743891716003
+    },
+    {
+      "rank": 3,
+      "file": "top10/rank03_RandomForest_seed0.joblib",
+      "model": "RandomForest",
+      "seed": 0,
+      "nested_outer_roc_auc": 0.7557283611158847,
+      "nested_outer_mcc": 0.4229643809770733,
+      "mean_inner_roc_auc": 0.7623336445689386,
+      "pooled_inner_oof_roc_auc": 0.7613421550094519,
+      "threshold": 0.47870290528192794
+    },
+    {
+      "rank": 4,
+      "file": "top10/rank04_XGBoost_seed2024.joblib",
+      "model": "XGBoost",
+      "seed": 2024,
+      "nested_outer_roc_auc": 0.7451881766626567,
+      "nested_outer_mcc": 0.35500393421414644,
+      "mean_inner_roc_auc": 0.7447537088909637,
+      "pooled_inner_oof_roc_auc": 0.7469353268030018,
+      "threshold": 0.24296872317790985
+    },
+    {
+      "rank": 5,
+      "file": "top10/rank05_RandomForest_seed2024.joblib",
+      "model": "RandomForest",
+      "seed": 2024,
+      "nested_outer_roc_auc": 0.7438706536060032,
+      "nested_outer_mcc": 0.36377840829644975,
+      "mean_inner_roc_auc": 0.7594509803921569,
+      "pooled_inner_oof_roc_auc": 0.7561579881995762,
+      "threshold": 0.4998942028823785
+    },
+    {
+      "rank": 6,
+      "file": "top10/rank06_RandomForest_seed12345.joblib",
+      "model": "RandomForest",
+      "seed": 12345,
+      "nested_outer_roc_auc": 0.7408775849229535,
+      "nested_outer_mcc": 0.37387446918416156,
+      "mean_inner_roc_auc": 0.7454985994397758,
+      "pooled_inner_oof_roc_auc": 0.7408775849229535,
+      "threshold": 0.4398147341828892
+    },
+    {
+      "rank": 7,
+      "file": "top10/rank07_XGBoost_seed2025.joblib",
+      "model": "XGBoost",
+      "seed": 2025,
+      "nested_outer_roc_auc": 0.7396459872830383,
+      "nested_outer_mcc": 0.3794863637930411,
+      "mean_inner_roc_auc": 0.7475539993775288,
+      "pooled_inner_oof_roc_auc": 0.7441427507590079,
+      "threshold": 0.4256444573402405
+    },
+    {
+      "rank": 8,
+      "file": "top10/rank08_LightGBM_seed0.joblib",
+      "model": "LightGBM",
+      "seed": 0,
+      "nested_outer_roc_auc": 0.7383141433235951,
+      "nested_outer_mcc": 0.30841011147538416,
+      "mean_inner_roc_auc": 0.7518991596638657,
+      "pooled_inner_oof_roc_auc": 0.7511743140287566,
+      "threshold": 0.6221156139128436
+    },
+    {
+      "rank": 9,
+      "file": "top10/rank09_RandomForest_seed42.joblib",
+      "model": "RandomForest",
+      "seed": 42,
+      "nested_outer_roc_auc": 0.73509194019591,
+      "nested_outer_mcc": 0.39023274268017977,
+      "mean_inner_roc_auc": 0.7499355742296918,
+      "pooled_inner_oof_roc_auc": 0.7466918714555767,
+      "threshold": 0.5061120936268728
+    },
+    {
+      "rank": 10,
+      "file": "top10/rank10_LightGBM_seed42.joblib",
+      "model": "LightGBM",
+      "seed": 42,
+      "nested_outer_roc_auc": 0.7330297301941913,
+      "nested_outer_mcc": 0.3457924890085169,
+      "mean_inner_roc_auc": 0.7752536570183629,
+      "pooled_inner_oof_roc_auc": 0.7697198831414332,
+      "threshold": 0.6901002356480895
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "training_file": "inputs/Overall_data.csv",
+  "index_column": "Index",
+  "target_column": "Y",
+  "models": ["LogisticRegression", "GaussianNB", "KNearestNeighbors", "RandomForest", "LightGBM", "XGBoost"],
+  "comparison_seeds": [0, 42, 2024, 2025, 12345],
+  "outer_folds": 5,
+  "inner_folds": 5,
+  "search_trials": 6,
+  "workers": 5,
+  "n_top_models": 10,
+  "deployment_model": "RandomForest",
+  "deployment_seed": 0
+}
